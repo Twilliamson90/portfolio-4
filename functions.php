@@ -439,29 +439,48 @@ function work_shortcode( $atts ) {
 
     $query_args = array(
         'post_type' => 'work',
-        'posts_per_page' => -1,
+        'posts_per_page' => 3,
     );
 
     $work_query = new WP_Query($query_args);
 
-    $loop_markup = '';
-
     ob_start();
-    echo '<div>';
+    echo '<section>';
     while ($work_query->have_posts()) {
         $work_query->the_post();
-        echo $loop_markup;
         include(locate_template('work-shortcode-single.php'));
-        if( strlen($loop_markup) > 0 ) {
-            echo '</div>';
-        }
     }
-    echo '</div>';
+    echo '</section>';
     wp_reset_postdata();
     return ob_get_clean();
 }
 
 add_shortcode('work', 'work_shortcode');
+
+function blog_grid_shortcode( $atts ) {
+
+    $query_args = array(
+        'post_type' => 'post',
+        'posts_per_page' => 3,
+    );
+
+    $work_query = new WP_Query($query_args);
+
+
+    ob_start();
+    echo '<section class="flex-grid flex-grid-1-3">';
+    while ($work_query->have_posts()) {
+        $work_query->the_post();
+        echo '<div class="col">';
+        include(locate_template('blog-shortcode-single.php'));
+        echo '</div>';
+    }
+    echo '</section>';
+    wp_reset_postdata();
+    return ob_get_clean();
+}
+
+add_shortcode('blog-grid', 'blog_grid_shortcode');
 
 
 function hide_email($email) {

@@ -4,7 +4,9 @@
 		
 		'use strict';
 		
-		// DOM ready, take it away
+		$('.blog-item').on('click', function(e) {
+		  window.location = $(this).find('.blog-item-link').first().attr('href');
+    });
 		
 	});
 	
