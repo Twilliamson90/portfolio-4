@@ -15,6 +15,8 @@
 
 				<?php comments_template( '', true ); // Remove if you don't want comments ?>
 
+                <?= the_field('json_code'); ?>
+
 				<br class="clear">
 
 				<?php edit_post_link(); ?>

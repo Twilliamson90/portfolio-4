@@ -28,24 +28,26 @@
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
-		<div class="wrapper">
+		<div class="">
 
-			<!-- header -->
-			<header class="header" role="banner">
+            <div class="wrapper">
+                <!-- header -->
+                <header class="header" role="banner">
 
-					<!-- logo -->
-					<div class="logo">
-						<a href="<?php echo home_url(); ?>">
-							Travis Williamson
-						</a>
-					</div>
-					<!-- /logo -->
+                        <!-- logo -->
+                        <div class="logo">
+                            <a href="<?php echo home_url(); ?>">
+                                Travis Williamson
+                            </a>
+                        </div>
+                        <!-- /logo -->
 
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<?php html5blank_nav(); ?>
-					</nav>
-					<!-- /nav -->
+                        <!-- nav -->
+                        <nav class="nav" role="navigation">
+                            <?php html5blank_nav(); ?>
+                        </nav>
+                        <!-- /nav -->
 
-			</header>
-			<!-- /header -->
+                </header>
+                <!-- /header -->
+            </div>

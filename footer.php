@@ -1,15 +1,17 @@
-			<!-- footer -->
-			<footer class="footer" role="contentinfo">
+            <div class="wrapper">
+                <!-- footer -->
+                <footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
-				<p class="copyright">
-					<?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					caffeine.
-				</p>
-				<!-- /copyright -->
+                    <!-- copyright -->
+                    <p class="copyright">
+                        <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
+                        caffeine.
+                    </p>
+                    <!-- /copyright -->
 
-			</footer>
-			<!-- /footer -->
+                </footer>
+                <!-- /footer -->
+            </div>
 
 		</div>
 		<!-- /wrapper -->
