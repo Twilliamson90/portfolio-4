@@ -17,10 +17,6 @@ get_header();
 
 				<?php the_content(); ?>
 
-				<br class="clear">
-
-				<?php edit_post_link(); ?>
-
 			</article>
 			<!-- /article -->
 

@@ -1,17 +1,39 @@
-            <div class="wrapper">
-                <!-- footer -->
-                <footer class="footer" role="contentinfo">
+            <div class="footer-container bg-dark">
 
-                    <!-- copyright -->
-                    <p class="copyright">
-                        <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-                        caffeine.
-                    </p>
-                    <!-- /copyright -->
+                <div class="wrapper">
+                    <!-- footer -->
+                    <footer class="footer" role="contentinfo">
 
-                </footer>
-                <!-- /footer -->
+                        <div class="flex-grid flex-grid-1-2">
+
+                            <div class="col margin-bottom-0">
+                                <nav>
+                                    <ul class="footer-bottom-nav">
+                                        <li>
+                                            <a href="/sitemap/">Sitemap</a>
+                                        </li>
+                                        <li>
+                                            <a href="/privacy-policy/">Privacy Policy</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <div class="col margin-bottom-0">
+                                <p class="copyright">
+                                    Built with love. Powered by caffeine.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </footer>
+                    <!-- /footer -->
+                </div>
+                <!-- /wrapper -->
+
             </div>
+            <!-- /bg-dark -->
 
 		</div>
 		<!-- /wrapper -->

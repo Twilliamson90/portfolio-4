@@ -3,26 +3,27 @@
 	<main role="main">
 		<!-- section -->
 		<section>
-
-			<h1><?php the_title(); ?></h1>
+            <div class="wrapper">
+			    <h1><?php the_title(); ?></h1>
+            </div>
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <div class="wrapper">
+                <!-- article -->
+                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-				<?php the_content(); ?>
+                    <?php the_content(); ?>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+                    <?php comments_template( '', true ); // Remove if you don't want comments ?>
 
-                <?= the_field('json_code'); ?>
+                    <br class="clear">
 
-				<br class="clear">
+                    <?php edit_post_link(); ?>
 
-				<?php edit_post_link(); ?>
-
-			</article>
-			<!-- /article -->
+                </article>
+                <!-- /article -->
+            </div>
 
 		<?php endwhile; ?>
 
