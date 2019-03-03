@@ -4,26 +4,22 @@
 		<!-- section -->
 		<section>
             <div class="wrapper">
-			    <h1><?php the_title(); ?></h1>
+			    <h1 class="text-center"><?php the_title(); ?></h1>
             </div>
 
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-            <div class="wrapper">
-                <!-- article -->
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <!-- article -->
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-                    <?php the_content(); ?>
+                <?php the_content(); ?>
 
-                    <?php comments_template( '', true ); // Remove if you don't want comments ?>
+                <?php comments_template( '', true ); // Remove if you don't want comments ?>
 
-                    <br class="clear">
+                <?php edit_post_link(); ?>
 
-                    <?php edit_post_link(); ?>
-
-                </article>
-                <!-- /article -->
-            </div>
+            </article>
+            <!-- /article -->
 
 		<?php endwhile; ?>
 

@@ -29,8 +29,18 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 body {
-	font:300 14px/1.5 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-top: 5px solid #0A246A;
+	font: 400 18px/1.5 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	color:#444;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 46px;
 }
 /* clear */
 .clear:before,
@@ -65,10 +75,14 @@ a:hover {
 
 /* wrapper */
 .wrapper {
-	max-width:1280px;
-	width:95%;
-	margin:0 auto;
-	position:relative;
+	max-width: 1280px;
+	width: 95%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.wrapper-narrow {
+    max-width: 800px;
 }
 
 .wrapper-contact {
@@ -76,12 +90,16 @@ a:hover {
     padding: 0 0 50px;
 }
 
+.wrapper-contact-solo {
+    padding-top: 50px;
+}
+
 /* header */
 .header {
     align-items: baseline;
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    padding: 10px 0 15px;
 }
 
 .header a {
@@ -127,6 +145,10 @@ a:hover {
 
 .font-700 {
     font-weight: 700;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .bg-dark {
@@ -320,6 +342,7 @@ a:hover {
     outline: 2px dotted #707660;
 }
 
+.contact-text h2,
 .contact-text h3 {
     color: #fff;
     font-size: 42px;
@@ -333,9 +356,23 @@ a:hover {
     line-height: 1.7em;
 }
 
+.post-hero-img {
+    margin-bottom: 35px;
+}
+
+.post-content {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.post-edit-link {
+    display: inline-block;
+    margin: 15px 0;
+}
+
 .footer-container {
     border-top: 1px solid #323b4b;
-    padding: 50px 0 20px;
+    padding: 25px 0;
 }
 
 .footer-container p {
