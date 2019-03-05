@@ -17,7 +17,11 @@ get_header();
 
 				<?php the_content(); ?>
 
-                <?php edit_post_link(); ?>
+                <div class="bg-dark">
+                    <div class="wrapper">
+                        <?php edit_post_link(); ?>
+                    </div>
+                </div>
 
 			</article>
 			<!-- /article -->
