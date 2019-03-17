@@ -29,9 +29,19 @@ html {
     font-family: 'Raleway', sans-serif;
 }
 body {
-    border-top: 5px solid #0A246A;
+    border-top: 5px solid #5B50FF;
 	font: 400 18px/1.5 'Merriweather Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	color:#444;
+	color: #444;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -40,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 46px;
+    font-size: 40px;
 }
 /* clear */
 .clear:before,
@@ -157,7 +167,7 @@ a:hover {
 
 .section-divider {
     border-bottom: 1px solid #d9d9d9;
-    color: #767676;
+    color: #595959;
     display: block;
     font-size: 16px;
     font-style: italic;
@@ -185,6 +195,23 @@ a:hover {
     line-height: 2.5em;
     margin: 60px 0 120px;
     max-width: 900px;
+}
+
+.single article {
+    margin-bottom: 25px;
+}
+
+.comment-form label {
+    display: block;
+}
+
+.comment-form input,
+.comment-form textarea {
+    padding: 7px;
+}
+
+.comment-form .submit {
+    border: 1px solid #ccc;
 }
 
 .work-list {
@@ -329,13 +356,25 @@ a:hover {
 }
 
 .form-submit input {
-    background-color: #fff;
-    border: none;
+    background-color: #5B50FF;
+    border: 1px solid #9b94ff;
     border-radius: 3px;
+    color: #fff;
     font-weight: 700;
     margin-top: 8px;
     padding: 15px 30px;
     text-transform: uppercase;
+    transition: background-color 150ms ease-in-out;
+}
+
+.form-submit input:hover {
+    background-color: #4b3fff;
+}
+
+.bg-dark .form-submit input {
+    background-color: #fff;
+    border: none;
+    color: #222;
 }
 
 .bg-dark .form-submit input:focus {
@@ -344,16 +383,21 @@ a:hover {
 
 .contact-text h2,
 .contact-text h3 {
-    color: #fff;
     font-size: 42px;
     margin-top: 0;
 }
 
 .contact-text p,
 .contact-text a {
-    color: #fff;
     font-size: 20px;
     line-height: 1.7em;
+}
+
+.bg-dark .contact-text h2,
+.bg-dark .contact-text h3,
+.bg-dark .contact-text p,
+.bg-dark .contact-text a {
+    color: #fff;
 }
 
 .post-hero-img {
@@ -374,21 +418,21 @@ a:hover {
     color: #fff;
 }
 
-.footer-container {
+.footer {
     border-top: 1px solid #323b4b;
     padding: 25px 0;
 }
 
-.footer-container p {
+.footer p {
     color: #fff;
 }
 
-.footer-container p.copyright {
+.footer p.copyright {
     margin: 0;
 }
 
 @media only screen and (min-device-width: 768px) {
-    .footer-container p.copyright {
+    .footer p.copyright {
         text-align: right;
     }
 }

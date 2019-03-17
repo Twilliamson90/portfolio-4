@@ -3,9 +3,9 @@
 	<main role="main">
 		<!-- section -->
 		<section>
-            <div class="wrapper">
+            <div class="wrapper wrapper-narrow">
 
-                <h1><?php _e( 'Archives', 'html5blank' ); ?></h1>
+                <h1 class="text-center"><?php the_archive_title(); ?></h1>
 
                 <?php get_template_part('loop'); ?>
 

@@ -37,9 +37,10 @@
                     <!-- /post details -->
                 </div>
 
-                <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
 
                 <div class="wrapper wrapper-narrow">
+                    <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
+
                     <?php comments_template(); ?>
                 </div>
 
