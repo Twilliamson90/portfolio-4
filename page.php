@@ -3,6 +3,7 @@
 	<main role="main">
 		<!-- section -->
 		<section>
+		
             <div class="wrapper">
 			    <h1 class="text-center"><?php the_title(); ?></h1>
             </div>
