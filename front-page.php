@@ -4,7 +4,7 @@
 get_header();
 ?>
 
-	<main role="main">
+	<main role="main" class="bg-light-gray">
 		<!-- section -->
 		<section>
 

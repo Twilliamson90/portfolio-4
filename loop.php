@@ -6,6 +6,12 @@
         <div class="work-item">
 
             <div class="work-item-media">
+
+                <?php
+                if ( has_post_thumbnail() ) : ?>
+                    <img src="<?php the_post_thumbnail_url(); ?>" />
+                <?php endif; ?>
+
                 <!-- post title -->
                 <h2>
                     <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
