@@ -6,7 +6,7 @@ get_header();
 
 	<main role="main" class="bg-light-gray">
 		<!-- section -->
-		<section>
+		<section class="no-margin">
 
             <!--<h1>--><?php // the_title(); ?><!--</h1>-->
 

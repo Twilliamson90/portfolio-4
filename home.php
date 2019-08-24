@@ -6,7 +6,7 @@ get_header();
 
 <main role="main" class="bg-light-gray">
 	<!-- section -->
-	<section class="section-md-space">
+	<section>
 		<div class="wrapper wrapper-medium">
 
 			<h1 class="text-center"><?php _e( 'Blog', 'html5blank' ); ?></h1>

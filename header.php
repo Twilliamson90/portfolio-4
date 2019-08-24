@@ -9,7 +9,7 @@
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
         <link href="https://fonts.googleapis.com/css?family=Raleway:700" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -40,6 +40,7 @@
                 </div>
                 <!-- /logo -->
 
+                <button class="mobile-nav-button">&#9776; Menu</button>
                 <!-- nav -->
                 <nav class="nav" role="navigation">
                     <?php html5blank_nav(); ?>

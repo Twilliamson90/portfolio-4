@@ -214,7 +214,10 @@ function html5wp_pagination()
         'base' => str_replace($big, '%#%', get_pagenum_link($big)),
         'format' => '?paged=%#%',
         'current' => max(1, get_query_var('paged')),
-        'total' => $wp_query->max_num_pages
+        'mid_size' => 2,
+        'total' => $wp_query->max_num_pages,
+        'prev_text' => __( '&larr; Previous', 'folio' ),
+		'next_text' => __( 'Next &rarr;', 'folio' )
     ));
 }
 
@@ -311,19 +314,18 @@ function html5blankcomments($comment, $args, $depth)
 	<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
 	<?php endif; ?>
 	<div class="comment-author vcard">
-	<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['180'] ); ?>
-	<?php printf(__('<cite class="fn">%s</cite> <span class="says">says:</span>'), get_comment_author_link()) ?>
+        <?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, 55 ); ?>
+        <p class="comment-author-body">
+            <?php printf(__('<cite class="fn">%s</cite>'), get_comment_author_link()) ?>
+            <?php
+                printf( __('%1$s'), get_comment_date()) ?><?php edit_comment_link(__('(Edit)'),'  ','' );
+            ?>
+        </p>
 	</div>
 <?php if ($comment->comment_approved == '0') : ?>
 	<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
 	<br />
 <?php endif; ?>
-
-	<div class="comment-meta commentmetadata"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>">
-		<?php
-			printf( __('%1$s at %2$s'), get_comment_date(),  get_comment_time()) ?></a><?php edit_comment_link(__('(Edit)'),'  ','' );
-		?>
-	</div>
 
 	<?php comment_text() ?>
 
@@ -334,6 +336,26 @@ function html5blankcomments($comment, $args, $depth)
 	</div>
 	<?php endif; ?>
 <?php }
+
+function comment_form_notes_before($fields)
+{
+    $fields['comment_notes_before'] = '<p class="comment-notes">Your email address will not be published. <br />Required fields are marked *</p>';    
+    return $fields;     
+}
+
+function comment_form_website_remove($fields)
+{
+    if( isset($fields['url']) ) {
+        unset($fields['url']);
+        return $fields;
+    }
+}
+
+function comment_form_hide_cookies_consent( $fields )
+{
+	unset( $fields['cookies'] );
+	return $fields;
+}
 
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
@@ -380,6 +402,9 @@ add_filter('show_admin_bar', 'remove_admin_bar'); // Remove Admin bar
 add_filter('style_loader_tag', 'html5_style_remove'); // Remove 'text/css' from enqueued stylesheet
 add_filter('post_thumbnail_html', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to thumbnails
 add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove width and height dynamic attributes to post images
+add_filter('comment_form_defaults','comment_form_notes_before');
+add_filter('comment_form_default_fields', 'comment_form_website_remove');
+add_filter('comment_form_default_fields', 'comment_form_hide_cookies_consent');
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether

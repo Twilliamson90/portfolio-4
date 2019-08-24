@@ -11,10 +11,12 @@
 
                 <div class="wrapper">
                     <!-- post title -->
-                    <h1 class="text-center">
+                    <h1 class="post-title">
                         <?php the_title(); ?>
                     </h1>
                     <!-- /post title -->
+
+                    <span class="post-date"><?php the_time('F j, Y'); ?></span>
 
                     <!-- post thumbnail -->
                     <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
@@ -25,22 +27,26 @@
                     <!-- /post thumbnail -->
                 </div>
 
-                <div class="post-content">
-                    <?php the_content(); // Dynamic Content ?>
-                </div>
-
                 <div class="wrapper wrapper-narrow">
-                    <!-- post details -->
-                    <span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-                    <span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-                    <span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
+
+                    <div class="post-content">
+                        <?php the_content(); // Dynamic Content ?>
+                    </div>
+
+                    <div class="author-bio">
+                        <img src="http://1.gravatar.com/avatar/405024c3874ab12afa8c292c33caf906?s=100&d=mm&r=g" alt="Travis Williamson" class="author-bio-img">
+                        <div class="author-bio-body">
+                            <p>I'm <strong>Travis Williamson</strong>&mdash;a developer, creator, blogger, designer, accessibility advocate and founder of Williamson Design.</p>
+                            <a href="/about">more about me &rarr;</a>
+                        </div>
+                    </div>
                     <!-- /post details -->
                 </div>
 
 
                 <div class="wrapper wrapper-narrow">
                     <?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
+                    
                     <?php comments_template(); ?>
                 </div>
 
