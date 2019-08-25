@@ -37,7 +37,7 @@
 	text-rendering:optimizeLegibility;
 }
 html {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Noto Serif', serif;
 }
 body {
     border-top: 6px solid #5B50FF;
@@ -64,7 +64,7 @@ main > section.no-margin {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Noto Serif', serif;
     font-weight: 700;
 }
 
@@ -76,6 +76,10 @@ p {
     font-size: 20px;
     line-height: 30px;
     margin: 0 0 30px;
+}
+
+.serif {
+    font-family: 'Noto Serif', serif;
 }
 
 /* clear */
@@ -111,7 +115,7 @@ a:hover {
 
 /* wrapper */
 .wrapper {
-	max-width: 1280px;
+	max-width: 1080px;
 	width: 95%;
 	margin: 0 auto;
 	position: relative;
@@ -149,6 +153,12 @@ a:hover {
 /* logo */
 .logo {
     font-size: 24px;
+}
+
+@media screen and (min-width:580px) {
+    .logo a {
+        margin-right: 2px;
+    }
 }
 .logo-img {
 
@@ -263,10 +273,16 @@ a:hover {
     padding-top: 130px;
 }
 
+.lead p {
+    font-size: 24px;
+    line-height: 1.5;
+    max-width: 800px;
+}
+
 .lead-container {
     font-size: 20px;
     line-height: 2.5em;
-    margin: 60px 0 120px;
+    margin: 60px 0 100px;
     max-width: 900px;
 }
 
@@ -294,6 +310,7 @@ a:hover {
 }
 
 .author-bio p {
+    font-size: 19px;
     margin-bottom: 8px;
 }
 
@@ -410,6 +427,11 @@ a:hover {
     display: flex;
     flex-direction: row;
     margin-bottom: 75px;
+    position: relative;
+}
+
+.work-item:hover .work-item-link {
+    outline: 2px dotted;
 }
 
 .work-item > :first-child {
@@ -434,8 +456,21 @@ a:hover {
     text-transform: uppercase;
 }
 
+.work-item-link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
 .work-item-description {
-    font-size: 16px;
+    
+}
+
+.about-separator {
+    margin: 100px;
 }
 
 .flex-grid {
@@ -463,21 +498,35 @@ a:hover {
 
 .blog-item {
     border: 1px solid #ddd;
-    cursor: pointer;
     max-width: 410px;
+    position: relative;
 }
 
 .blog-item-media {
     border-bottom: 1px solid #ddd;
 }
 
+.blog-item time {
+    color: #777;
+    font-size: 15px;
+}
+
 .blog-item-title {
     font-size: 20px;
-    text-transform: uppercase;
+    margin: 8px 0 10px;
 }
 
 .blog-item-link {
     text-decoration: none;
+}
+
+.blog-item-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .blog-item-content {
@@ -572,7 +621,7 @@ a:hover {
 .contact-text h2,
 .contact-text h3 {
     font-size: 42px;
-    margin-top: 0;
+    margin: 0 0 12px;
 }
 
 .contact-text p,

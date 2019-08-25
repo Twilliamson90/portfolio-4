@@ -357,6 +357,11 @@ function comment_form_hide_cookies_consent( $fields )
 	return $fields;
 }
 
+function deregister_jquery()
+{
+   wp_deregister_script('jquery');
+}
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
@@ -405,6 +410,8 @@ add_filter('image_send_to_editor', 'remove_thumbnail_dimensions', 10); // Remove
 add_filter('comment_form_defaults','comment_form_notes_before');
 add_filter('comment_form_default_fields', 'comment_form_website_remove');
 add_filter('comment_form_default_fields', 'comment_form_hide_cookies_consent');
+
+if (!is_admin()) add_action("wp_enqueue_scripts", "deregister_jquery", 11);
 
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether

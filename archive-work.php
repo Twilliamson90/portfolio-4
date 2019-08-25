@@ -1,18 +1,14 @@
-<?php
-/* Template Name: Blog Template */
-
-get_header();
-?>
+<?php get_header(); ?>
 
 <main role="main" class="bg-light-gray">
 	<!-- section -->
 	<section>
 		<div class="wrapper wrapper-medium">
 
-			<h1 class="text-center"><?php _e( 'Blog', 'html5blank' ); ?></h1>
+			<h1 class="text-center"><?php _e( 'Work', 'html5blank' ); ?></h1>
 
 			<div class="blog-archive">
-				<?php get_template_part('loop-home'); ?>
+				<?php get_template_part('loop-work'); ?>
 			</div>
 
 			<?php get_template_part('pagination'); ?>

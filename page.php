@@ -12,8 +12,9 @@
 
             <!-- article -->
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
-                <?php the_content(); ?>
+				<section class="wrapper">
+                	<?php the_content(); ?>
+				</section>
 
                 <?php edit_post_link('Edit', '<div class="wrapper">', "</div>"); ?>
 

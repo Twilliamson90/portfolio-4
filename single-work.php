@@ -16,7 +16,7 @@
                     </h1>
                     <!-- /post title -->
 
-                    <span class="post-date"><?php the_time('F j, Y'); ?></span>
+                    <span class="post-date"><?php the_time('F Y'); ?></span>
 
                     <!-- post thumbnail -->
                     <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>

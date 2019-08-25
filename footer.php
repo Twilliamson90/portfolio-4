@@ -20,7 +20,7 @@
 
                     <div class="col margin-bottom-0">
                         <p class="copyright">
-                            Built with love. Powered by caffeine.
+                            Built by me. Powered by caffeine.
                         </p>
                     </div>
 
