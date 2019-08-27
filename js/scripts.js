@@ -1,13 +1,14 @@
-(function ($, root, undefined) {
-	
-	$(function () {
+(function () {
+	window.onload = function() {
 		
 		'use strict';
-		
-		$('.blog-item').on('click', function(e) {
-		  window.location = $(this).find('.blog-item-link').first().attr('href');
-    });
-		
-	});
-	
-})(jQuery, this);
+
+		var mobileNavButton = document.querySelector('.mobile-nav-button');
+		var mainNavigation = document.querySelector('.nav');
+
+		mobileNavButton.onclick = function() {
+			mainNavigation.classList.toggle('is-open');
+		}
+
+	};
+})();
